@@ -1,0 +1,28 @@
+nohup: 正在忽略輸入
+2018-04-20 18:03:19.743024: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-04-20 18:03:20.428548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.835
+pciBusID: 0000:03:00.0
+totalMemory: 7.93GiB freeMemory: 7.81GiB
+2018-04-20 18:03:20.428581: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:03:00.0, compute capability: 6.1)
+/usr/lib/python3.4/importlib/_bootstrap.py:321: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  return f(*args, **kwds)
+Using TensorFlow backend.
+/usr/local/lib/python3.4/dist-packages/skimage/transform/_warps.py:84: UserWarning: The default mode, 'constant', will be changed to 'reflect' in skimage 0.15.
+  warn("The default mode, 'constant', will be changed to 'reflect' in "
+
+Loading dataset..
+
+Start training VGG16 with freezed top 0 layers
+Traceback (most recent call last):
+  File "train.py", line 166, in <module>
+    auroc, prauc = eval_auc(model, test_X, test_y)
+  File "train.py", line 70, in eval_auc
+    prauc_score = prauc(y, prob, plot=plot_prauc, filename=filename+'_prauc.png')
+  File "train.py", line 52, in prauc
+    precision, recall, thresholds = precision_recall_curve(y, prob)
+NameError: name 'precision_recall_curve' is not defined
+Exception ignored in: <bound method Session.__del__ of <tensorflow.python.client.session.Session object at 0x7f0a3b1397b8>>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/tensorflow/python/client/session.py", line 696, in __del__
+TypeError: 'NoneType' object is not callable
